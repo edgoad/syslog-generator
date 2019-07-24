@@ -28,8 +28,8 @@ do
 		FACILITY=${FACILITIES[$RANDOM % ${#FACILITIES[@]} ]}
 		LEVEL=${LEVELS[$RANDOM % ${#LEVELS[@]} ]}
 
-			$NC $DEST_IP.11 -u 514 -w 1 <<< "<$PRIORITY>`env LANG=us_US.UTF-8 date "+%b %d %H:%M:%S"` $SOURCE [$FACILITY.$LEVEL] service: $RANDOM_MESSAGE"
-			#echo $NC $DEST_IP.11 -u 514 -w 1  "<$PRIORITY>`env LANG=us_US.UTF-8 date "+%b %d %H:%M:%S"` $SOURCE service: $RANDOM_MESSAGE"
+			$NC $DEST_IP -u 514 -w 1 <<< "<$PRIORITY>`env LANG=us_US.UTF-8 date "+%b %d %H:%M:%S"` $SOURCE [$FACILITY.$LEVEL] service: $RANDOM_MESSAGE"
+			#echo $NC $DEST_IP -u 514 -w 1  "<$PRIORITY>`env LANG=us_US.UTF-8 date "+%b %d %H:%M:%S"` $SOURCE service: $RANDOM_MESSAGE"
 
 	done
 	sleep $SLEEP_SECS
